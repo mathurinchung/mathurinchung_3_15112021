@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+$colorPrimary: #9365dc;
+$colorSecondary: #ff79da;
+$colorTertiary: #99e2d0;
+
+$background: #fff;
+$foreground: #000;
+
+$background-alt: #f6f6f6;
+$foreground-alt: #7e7e7e;
+
+$backgroundLocation: #eaeaea;
+$foregroundLocation: #353535;
+
+$backgroundFooter: #353535;
+$foregroundFooter: #fff;
+
+$backgroundStepHover: #f5edff;
+$foregroundButton: #fff;
+$foregroundNewBadge: #008766;
+$foregroundPrevious: #353535;
+
+$colorLoader: $colorPrimary, $colorSecondary, $colorTertiary;
