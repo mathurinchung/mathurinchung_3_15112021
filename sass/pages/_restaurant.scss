@@ -1,0 +1,202 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the restaurant page.
+// -----------------------------------------------------------------------------
+.image {
+  width: 100%;
+  height: 17.188rem;
+  object-fit: cover;
+
+  @media screen and (min-width: 48rem) {
+      min-height: 32rem;
+  }
+}
+
+.menu {
+  position: relative;
+  margin-top: -3.688rem;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
+  padding: 1.938rem 0 1.25rem;
+  background-color: #f6f6f6;
+  
+  &__button {
+      @include likeButton;
+
+      &::before {
+          right: 2rem;
+      }
+  
+      &::after {
+          right: 2rem;
+      }
+  }
+
+  &__header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.25rem;
+  }
+
+  &__title {
+      font-family: 'Shrikhand', cursive;
+      font-size: 1.75rem;
+      font-weight: 400;
+
+      @media screen and (max-width: 20rem) {
+          font-size: 1.5rem;
+      }
+  }
+
+  @media screen and (min-width: 75rem) {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 75rem;
+  }
+}
+
+.courses {
+  padding: 1.875rem 0 0;
+
+  @media screen and (min-width: 62rem) {
+      display: flex;
+      justify-content: space-between;
+  }
+}
+
+.course {
+  margin-bottom: 2rem;
+
+  &__title {
+      position: relative;
+      margin-bottom: .875rem;
+      padding: 0 1.25rem .5rem;
+      color: #696969;
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: uppercase;
+
+      &::after {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          content: "";
+          margin: 0 1.25rem;
+          width: 2.5rem;
+          height: .188rem;
+          background-color: #99e2d0;
+      }
+  }
+
+  @media screen and (min-width: 62rem) {
+      width: 33%;
+  }
+}
+
+.item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 .313rem .438rem rgba(0, 0, 0, .15);
+  margin: 0 .813rem .938rem;
+  border-radius: .938rem;
+  background-color: #fff;
+  cursor: pointer;
+  animation: appear 1s forwards ease-out;
+  opacity: 0;
+
+  @for $i from 1 through 4 {
+      &:nth-child(3n + #{$i}) {
+          animation-delay: #{($i - .5) * 0.5}s
+      }
+  }
+
+  &__header {
+      overflow: hidden;
+      padding: .75rem .313rem .75rem .75rem;
+      width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+  }
+
+  &__title {
+      margin-bottom: .313rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+
+  &__garnish {
+      font-size: .9rem;
+      font-weight: 300;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+
+  &__price {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: .75rem 1.07rem;
+      font-size: .938rem;
+      font-weight: 700;
+  }
+
+  .check {
+      margin-right: -3.75rem;
+      transition: all .5s ease-in-out;
+
+      &__icon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 3.7rem;
+          height: 100%;
+          background-color: $colorTertiary;
+
+          &::after {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              content: "\f058";
+              background-color: $colorTertiary;
+              color: #fff;
+              font-family: "Font Awesome 5 Free";
+              font-size: 1.375rem;
+              font-weight: 700;
+              font-style: normal;
+              transform: rotate(-180deg);
+              transition: all .5s ease-in;
+          }
+      }
+  }
+
+  &:hover {
+      .check {
+          margin-right: 0;
+
+          &__icon {
+              &::after {
+                  transform: rotate(360deg);
+              }
+          }
+      }
+  }
+}
+
+.order {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .875rem 0 2.375rem;
+
+  &__button {
+      @include button($paddingButton: .938rem 3.125rem);
+      border: none;
+  }
+}

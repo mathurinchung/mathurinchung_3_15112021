@@ -1,0 +1,58 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+.footer {
+  padding: 1.375rem 1.563rem 1.625rem;
+  background-color: $backgroundFooter;
+
+  &__wrapper {
+      @media screen and (min-width: 75rem) {
+          margin-right: auto;
+          margin-left: auto;
+          max-width: 75rem;
+      }
+  }
+
+  &__title {
+      @include fontFamilyHeading;
+      margin-bottom: 1.063rem;
+      color: $foregroundFooter;
+      font-size: 1.063rem;
+
+      @media screen and (min-width: 48rem) {
+          margin-bottom: 1.5rem;
+          font-size: 2rem;
+          text-align: center;
+      }
+  }
+
+  &__list {
+      list-style: none;
+
+      @media screen and (min-width: 48rem) {
+          display: flex;
+          justify-content: space-around;
+      }
+  }
+
+  &__item {
+      margin-bottom: .5rem;
+  }
+
+  &__link {
+      display: flex;
+      align-items: baseline;
+      color: $foregroundFooter;
+      text-decoration: none;
+  }
+
+  &__icon {
+      &--1 {
+          margin-right: .625rem;
+      }
+
+      &--2 {
+          margin-right: .438rem;
+      }
+  }
+}
